@@ -1,0 +1,384 @@
+.mensaje_error{
+	border: 1px solid #F01818;
+	background: #FAB9B9;
+	color: #000;
+	margin-top: 5px;
+}
+
+.logo_app{
+	text-align: center;
+}
+
+.explicacion_texto {
+    clear: both;
+    font-size: 11px;
+    font-style: italic;
+    margin-left: 53px;
+    margin-top: -20px;
+}
+
+.ultimos-registrados i {
+    max-width: 20px;
+    width: 20px;
+    position: absolute;
+    left: 14px;
+}
+
+
+.ultimos-registrados tr td:first-child {
+    position: relative;
+}
+
+
+.sidebar #nav li ul li.open a {
+    background: #eee;
+    border-bottom: 1px solid #ddd;
+}
+
+.txtperfil {
+
+   float: left;
+   width: 500px;
+}
+
+
+.clear_div {
+
+	clear: both;
+}
+
+
+
+.foto_img {
+  /*max-width: 10%!important; */
+}
+
+.foto_img_edit {
+  max-width: 50%!important;
+}
+
+
+
+.fileupload-exists .fileupload-new, .fileupload-new .fileupload-exists {
+    display: none;
+}
+
+.btn-file > input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    transform: translate(-300px, 0) scale(4);
+    font-size: 23px;
+    direction: ltr;
+    cursor: pointer;
+}
+
+.btn-file {
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+}
+
+
+.fileupload .btn {
+    padding: 5px 18px !important;
+}
+
+.fileupload .btn {
+    vertical-align: middle;
+}
+
+/*
+.btn {
+display: inline-block;
+padding: 7px 18px;
+margin-bottom: 0;
+font-size: 12px;
+line-height: 20px;
+color: #444444;
+text-align: center;
+vertical-align: middle;
+cursor: pointer;
+background-color: #d0cfd6;
+border: 0px;
+}
+*/
+
+#contador{
+   margin-left: 274px;
+   position: relative;
+   top: -15px;	
+}
+
+.opc{
+
+
+ border: 1px solid #ccc;
+ margin-top: 12px;
+ padding: 10px;
+
+
+}
+
+.opc h4 {
+
+    font-weight: bold;
+    text-align: center;
+
+}
+
+
+
+.modal_resps {
+    margin: 30px auto;
+    width: 800px;
+}
+
+
+.correctc {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.respuestas_lista{
+
+  margin-bottom: 5px;
+  overflow: hidden;
+}
+
+
+
+.col-lg-1.clonx {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: -36px;
+    top: 1px;
+}
+
+#borrar_form {
+    display: none;
+}
+
+
+.num_oportunidades{
+    margin-top: 20px;
+}
+
+.tab-content>.tab-pane {
+    overflow: hidden;
+}
+
+#add_preguntas button {
+    margin-bottom: 10px;
+    margin-left: 32px;
+}
+
+
+
+.botons_app .nav.nav-pills > li > a{
+    color: #666;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    background-color: #f5f5f5;
+    background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+    background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+    border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    *background-color: #e6e6e6;
+    /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    border: 1px solid #ccc;
+    *border: 0;
+    border-bottom-color: #c2c2c2;
+    border-radius: 5px;
+    *margin-left: .3em;
+    margin-right: 5px;
+    padding:7px 14px;
+}
+
+.botons_app .nav.nav-pills > li > a:hover, .botons_app .nav.nav-pills > li > a:focus{
+    color: #444;
+    background-color: #e6e6e6;
+    *background-color: #d9d9d9;
+    text-decoration: none;
+    border:1px solid #aaa;
+    background-position: 0 -15px;
+    -webkit-transition: background-position 0.1s linear;
+    -moz-transition: background-position 0.1s linear;
+    -o-transition: background-position 0.1s linear;
+    transition: background-position 0.1s linear;  
+}
+
+.botons_app .nav.nav-pills > li > a span{
+    border-radius:40px;
+    padding:4px 6px;
+    font-size:11px;
+    display:inline-block;
+    text-shadow:none !important;
+}
+
+.botons_app .nav-pills .open .dropdown-toggle{
+    color: #444;
+    background-color: #e6e6e6;
+    *background-color: #d9d9d9;
+    text-decoration: none;
+    background-position: 0 -15px;
+    -webkit-transition: background-position 0.1s linear;
+    -moz-transition: background-position 0.1s linear;
+    -o-transition: background-position 0.1s linear;
+    transition: background-position 0.1s linear; 
+}
+
+
+
+.botons_app .header-data .hdata i {
+    border-radius: 50px;
+    box-shadow: 0 0 1px #777 inset;
+    color: #fff;
+    display: inline-block;
+    font-size: 17px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    width: 40px;
+}
+
+
+
+.botons_app .header-data .hdata {
+    display: inline-block;
+    margin-right: 15px;
+    width: 85px;
+}
+
+
+
+.botons_app .header-data .hdata p, .botons_app .header-data .hdata a, .botons_app .header-data .hdata a:hover {
+    color: #666;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 16px;
+    margin-top: 3px;
+    text-align: center;
+}
+
+
+.botons_app .header-data .hdata em {
+    display: block;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.botssxx{
+   margin-right: 25px;
+   float: left;
+}
+
+.botssxx2{
+
+}
+
+span.input-group-addon i {
+    cursor: pointer;
+}
+
+
+.clases{
+    display: none;
+}
+
+
+.page-tables table#data-table thead th {
+    font-weight: bold;
+    background: #E8E8E8;
+}
+
+
+.page-tables table#data-table tfoot th {
+    font-weight: bold;
+    background: #E8E8E8;
+}
+
+.subittlex{
+ font-weight: bold;
+ padding: 30px;
+}
+
+#descripcion_contador,#contenido_contador {
+ margin-bottom: 20px;
+ margin-left: 274px;
+ margin-top: -12px;
+}
+
+.errormensaje {
+
+}
+
+
+.errormensaje p {
+  background: #F5BCBC;
+  color: #373737;
+  text-align: center;
+  padding: 4px;  
+}
+
+.mensaje_ok{
+    background: #CBFFCC;
+    padding: 6px;
+    color: #4C4C4C;
+}
+
+.mensaje_ok p {
+
+}
+
+
+.opciones{
+    clear: both;
+    overflow: hidden;
+}
+
+.gosp{
+    left: -4px;
+    position: absolute;
+    top: 2px;
+}
+
+.col-lg-9 {
+    position: relative;
+}
+
+.delete_cloned1{
+    position: absolute;
+    right: -15px;
+    top: 4px;
+}
+
+.cloned1{
+
+}
+
+.clon1 {
+    position: relative;
+}
+
+.opciones{
+    display: none;
+}
+
+.has_sub a .pull-right {
+    position: absolute;
+}
+.has_sub > a {
+    position: relative;
+}

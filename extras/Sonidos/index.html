@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="audiojs/audio.min.js"></script>
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> 
+
+
+
+	<script>
+audiojs.events.ready(function(){
+var as = audiojs.createAll();
+});
+</script>
+
+<style>
+	
+.sonidos {
+	display: none;
+}
+
+</style>
+
+</head>
+<body>
+
+<button id="boton1">Sonido clic!</button>
+
+
+
+
+
+<div class="sonidos">
+	<audio id="sonido1" src="CajaSorpresaLoop.mp3" preload="auto"></audio>
+</div>
+
+
+<script>
+	
+$(document).ready(function() {
+
+$('#boton1').click(function(event) {
+	 event.preventDefault();
+$('#sonido1').get(0).play();
+
+});
+
+});
+
+</script>
+
+</body>
+</html>

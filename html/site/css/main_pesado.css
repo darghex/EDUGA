@@ -1,0 +1,188 @@
+/*! andresquintero@yahoo.com/ */
+@charset "utf-8";
+/* CSS Document */
+
+/*--------------------------------------------------
+  // RESET
+---------------------------------------------------*/
+.clear:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+.last {
+    margin-right: 0px !important;
+}
+.last-bottom {
+    margin-bottom: 0px !important;
+}
+img, a, div, input, textarea, select {
+    outline: none;
+    border: none;
+}
+textarea {
+    resize: none
+}
+.hider {
+    display: none;
+}
+.cont-visible {
+    display: block !important;
+}
+.mobile-visible {
+    I
+    display: none;
+}
+.mobile-hider {
+    display: block;
+}
+.table-hider {
+    display: block;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    border-collapse: separate;
+    border-spacing: 0px;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    text-decoration: none;
+}
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+html {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/* ==========================================================================
+   FONT
+   ========================================================================== */
+@font-face {
+    font-family: century;
+    src: url("fonts/GOTHIC.eot?#iefix");
+    /* For IE browsers */
+}
+@font-face {
+    font-family: century;
+    src: url("fonts/GOTHIC.eot");
+    /* For IE browsers */
+}
+@font-face {
+    font-family: century;
+    src: url("fonts/GOTHIC.ttf");
+    /* For most other browsers */
+}
+@font-face {
+    font-family: century;
+    src: url("fonts/GOTHIC.woff");
+    /* For most other browsers */
+}
+
+@font-face {
+    font-family: century_b;
+    src: url("fonts/GOTHICB.eot?#iefix");
+    /* For IE browsers */
+}
+@font-face {
+    font-family: century_b;
+    src: url("fonts/GOTHICB.eot");
+    /* For IE browsers */
+}
+@font-face {
+    font-family: century_b;
+    src: url("fonts/GOTHICB.ttf");
+    /* For most other browsers */
+}
+@font-face {
+    font-family: century_b;
+    src: url("fonts/GOTHICB.woff");
+    /* For most other browsers */
+}
+
+@font-face {
+    font-family: century_it;
+    src: url("fonts/GOTHICI.eot?#iefix");
+    /* For IE browsers */
+}
+@font-face {
+    font-family: century_it;
+    src: url("fonts/GOTHICI.eot");
+    /* For IE browsers */
+}
+@font-face {
+    font-family: century_it;
+    src: url("fonts/GOTHICI.ttf");
+    /* For most other browsers */
+}
+@font-face {
+    font-family: century_it;
+    src: url("fonts/GOTHICI.woff");
+    /* For most other browsers */
+}
+@font-face {
+    font-family: century_itb;
+    src: url("fonts/GOTHICBI.eot?#iefix");
+    /* For IE browsers */
+}
+@font-face {
+    font-family: century_itb;
+    src: url("fonts/GOTHICBI.eot");
+    /* For IE browsers */
+}
+@font-face {
+    font-family: century_itb;
+    src: url("fonts/GOTHICBI.ttf");
+    /* For most other browsers */
+}
+@font-face {
+    font-family: century_itb;
+    src: url("fonts/GOTHICBI.woff");
+    /* For m

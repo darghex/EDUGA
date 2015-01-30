@@ -1,0 +1,1 @@
+view_admin_menu_resumen_de_perfil
