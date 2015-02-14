@@ -21,7 +21,7 @@ $config =
 		"providers" => array (
 			"Facebook" => array (
 				"enabled" => true,
-				"keys"    => array ( "id" => "1584136425142766", "secret" => "2fa1651e135004235fb88f2f030a00f5" ),
+				"keys"    => array ( "id" => "1592850577612451", "secret" => "6004a9f98490fcc16fdff777c39fcc87" ),
 			),
 		),
 		"debug_mode" => (ENVIRONMENT == 'production'),

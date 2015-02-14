@@ -982,10 +982,16 @@ foreach ($detalle_curso->actividades as $keytmp => $valuetmp) {
   <ul>
 
 
-
+<?php $file="tmp/".str_replace(".html", ".zip", $this->uri->segment(6)); ?>
     <li>
-      <a <?php if ( $mi_plan_actual==$this->config->item('Estandar'))  { ?> class="denegado" <?php } ?> <?php if ( $mi_plan_actual==$this->config->item('Premium'))  { ?> href="tmp/<?php echo str_replace(".html", ".zip", $this->uri->segment(6)); ?>"<?php } ?>>
-       <div class="download_on"></div>
+      <a <?php if ( $mi_plan_actual==$this->config->item('Estandar'))  { ?> class="denegado" <?php } ?> <?php if ( $mi_plan_actual==$this->config->item('Premium'))  { ?> <?php if (file_exists($file)): ?> href="<?php echo $file; ?>" <?php else: ?>  <?php endif; ?>   <?php } ?>>
+   <?php if (file_exists($file)): ?>
+        <div class="download_on"></div>
+     <?php else: ?>
+    <div class="download_off"></div>
+   <?php endif ?>
+   
+   
        <p>Contenido Adicional</p>
 
      </a>

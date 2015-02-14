@@ -49,9 +49,9 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'virtuala_platafo';
-$db['default']['password'] = 'plataforma';
-$db['default']['database'] = 'virtuala_platafo';
+$db['default']['username'] = 'virtuala_dev';
+$db['default']['password'] = 'd3v3l0p9!9';
+$db['default']['database'] = 'virtuala_edugadev';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

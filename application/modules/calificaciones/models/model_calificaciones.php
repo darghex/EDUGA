@@ -27,8 +27,8 @@ class Model_Calificaciones extends CI_Model{
 
 		#$this->db->join('calificaciones', $tabla.'.id_cursos = calificaciones.id_cursos and '.$tabla.'.id_cursos = calificaciones.id_cursos ','left');
 
-		$this->db->join('usuarios', $tabla.'.id_usuario_creado = usuarios.id_usuarios');
-
+		#$this->db->join('usuarios', $tabla.'.id_usuario_creado = usuarios.id_usuarios');
+		$this->db->join('usuarios', $tabla.'.id_usuarios = usuarios.id_usuarios');
 
 
 

@@ -147,7 +147,10 @@
                             <?php ## aqui agrego etiqueta de que es necesario calificar al menos 1 de éste curso ?>
                             <?php $if_calif=if_calificar3($value->id_cursos); ?>
                             <?php if ($if_calif>0): ?>
+
+<a href="calificaciones/root/lista_estudiantes/<?php echo $value->id_cursos; ?>">
                               <span class="label label-danger">Por calificar (<?php echo $if_calif; ?>)</span>
+</a>
                             <?php endif ?>
                           <?php endif; ?>
 

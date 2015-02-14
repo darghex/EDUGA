@@ -13,9 +13,9 @@ $desc=array (
 );
 $up=-63;
 $ut=44;
-$ttffile='C:/xampp_cole/htdocs/application/third_party/mpdf/ttfonts/DejaVuSerifCondensed.ttf';
+$ttffile='/home/virtuala/public_html/edugadev/application/third_party/mpdf/ttfonts/DejaVuSerifCondensed.ttf';
 $TTCfontID='0';
-$originalsize=296976;
+$originalsize=296100;
 $sip=false;
 $smp=false;
 $BMPselected=true;

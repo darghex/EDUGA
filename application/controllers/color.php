@@ -160,7 +160,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 ,button, input, select, tex
    color: <?php echo $custom_sistema->colores_sistema1; ?> !important;
 }
 
-.nosotros_col1 h2,.encabezado_wrap h6,.encabezado2_wrap h6,.curso_des h2 {
+.nosotros_col1 h2,.curso_des h2 {
     color: <?php echo $custom_sistema->colores_sistema2; ?> !important;
 }
 
@@ -182,7 +182,7 @@ border: <?php echo $custom_sistema->colores_sistema2; ?> 5pt solid;
 /* ==========================================================================
     Color # 1 TEXTO
    ======================== ================================================== */
-.explicacion_c,.col2_wrap h4,.pensum_block h2,.teacher_col2 h3,.perfil_col2 h3,.disc_block_A_col2 span,.landing_col1 h3,.inbox_curso, .inbox_actividad,.box h3,.evaluacion_wrap h2,.landing h3,div#gracias{
+.explicacion_c,.col2_wrap h4,.pensum_block h2,.teacher_col2 h3,.perfil_col2 h3,.disc_block_A_col2 span,.landing_col1 h3,.inbox_curso, .inbox_actividad,.box h3,.evaluacion_wrap h2,.landing h3,div#load_screen > div#loading,div#gracias{
   color:<?php echo $custom_sistema->colores_sistema1; ?>;
 }
 
@@ -224,7 +224,7 @@ border: <?php echo $custom_sistema->colores_sistema2; ?> 5pt solid;
 /* ==========================================================================
     Color # 4 TEXTO
    ======================== ================================================== */
-.encabezado_wrap p,.empezar_btn,.facebook_btn{
+.encabezado_wrap p,.encabezado2_wrap h6,.empezar_btn,.facebook_btn{
   color:#fff;
 }
 /* ==========================================================================
