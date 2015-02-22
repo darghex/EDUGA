@@ -1,3 +1,3 @@
 # EDUGA
-Plataforma e-Learning con gamification 
+Plataforma e-Learning con gamification.
 
