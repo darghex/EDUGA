@@ -9,56 +9,10 @@ Tesoro.Game = function(game){
 	Tesoro._health = 0;
 
 };
-var rc;
-Tesoro.Game.prototype = {
-	create: function(){
-		this.add.sprite(0, 0, 'backgroundGame');
-		this.add.sprite(0, 150, 'cuadroPregunta');
-		console.log(Math.floor(Math.random() * (21 - 1 + 1)) + 1);
 
-		var style = { font: 'bold 15pt Arial', fill: 'white', align: 'left', wordWrap: true, wordWrapWidth: 700 };
-		var pregunta;
-		var r1;
-		var r2;
-		var r3;
-		var r4;
-		//var rc;
-		
-		$.each(this.game.global.score, function(i, item) {
-			console.log("Pregunta " + item.pregunta);
-			pregunta = item.pregunta;
-			r1 = item.r1;
-			r2 = item.r2;
-			r3 = item.r3;
-			r4 = item.r4;
-			rc = item.rc;
-		});
-		//Pregunta
-		this.add.text(60, 160, pregunta, style);
-		//Opcion 1
-		txtr1 = this.add.text(60, 280, r1, style);
-		txtr1.inputEnabled = true;
-		txtr1.name = 'A';
-		console.log(rc);
-		txtr1.events.onInputDown.add(validarRespusta, this);
-		
-		//Opcion 2
-		txtr2 = this.add.text(500, 280, r2, style);
-		txtr2.inputEnabled = true;
-		txtr2.name = 'B';
-		txtr2.input.useHandCursor = true;
-		txtr2.events.onInputDown.add(validarRespusta, this);
-		//Opcion 3
-		txtr3 = this.add.text(60, 400, r3, style);
-		txtr3.inputEnabled = true;
-		txtr3.name = 'C';
-		txtr3.events.onInputDown.add(validarRespusta, this);
-		//Opcion 4
-		txtr4 = this.add.text(500, 400, r4, style);
-		txtr4.inputEnabled = true;
-		txtr4.name = 'D';
-		txtr4.events.onInputDown.add(validarRespusta, this);
-	},
+
+Tesoro.Game.prototype = {
+	create: escenario,
 	managePause: function(){
 		// pause the game
 		this.game.paused = true;
@@ -75,9 +29,95 @@ Tesoro.Game.prototype = {
 };
 
 
+
+var instance = null;
+var tablero = { pregunta: null, respuesta: null};
+var opciones = Array();
+
+function escenario(){
+		instance = this;
+		
+		
+
+		$.ajax({
+			url: "../html/game/php/conexionManager.php",
+			dataType: 'json',
+			contentType:"application/json",
+			success: function(response) {
+				pregunta = response;
+				tablero.pregunta = pregunta.id;
+
+				instance.add.text(60, 160, pregunta.pregunta, { 
+							 font: 'bold 15pt Arial', 
+							 fill: 'white', align: 'center', 
+							 wordWrap: true, 
+							 wordWrapWidth: 700 
+							});
+				
+				//carga de opciones de respuesta
+				opciones = Array(
+						{ name: pregunta.r1.label, label: 'A', description: pregunta.r1.detalle, x: 60, y: 285 },
+						{ name: pregunta.r2.label, label: 'B', description: pregunta.r2.detalle, x: 500, y: 285 },
+						{ name: pregunta.r3.label, label: 'C', description: pregunta.r3.detalle, x: 60, y: 405 },
+						{ name: pregunta.r4.label, label: 'D', description: pregunta.r4.detalle, x: 500, y: 405 }
+					);
+
+				$.each(opciones, function(i, opcion) {
+			
+					txt = instance.add.text(opcion.x, opcion.y, opcion.label + ". " +opcion.description, 
+							{ font: 'bold 15pt Arial', 
+							  fill: 'white', align: 'justify', 
+							  wordWrap: true, 
+							  wordWrapWidth: 250, 
+							  wordWrapHeight: 50, 
+							}
+						);
+					txt.inputEnabled = true;
+					txt.input.useHandCursor = true;
+					txt.name = opcion.name;
+					txt.label = opcion.label;
+					txt.events.onInputDown.add(validarRespusta, instance);
+				
+				});
+
+			},
+			error: function(response){
+					alert('response error');
+			}
+		});
+
+		instance.add.sprite(0, 0, 'backgroundGame');
+		instance.add.sprite(0, 150, 'cuadroPregunta');
+		
+}
+
+
 function validarRespusta(item) {
-    /*item.fill = "#ff0044";
-    item.text = "click and drag me";*/
-	if (rc === item.name)
-		console.log("Respuesta Correcta " + rc + " - Click : " + item.name);
+  $.ajax({
+			url: "../html/game/php/verificar.php?preg="+tablero.pregunta+"&rpta="+item.name,
+			dataType: 'json',
+			contentType:"application/json",
+			success: function(response) {
+				 if( item.name == response.rc ){
+				 	// Aqui se carga el escenario de respuesta correcta e inicia una nueva pregunta
+  					console.log("respuesta correcta"); 
+  					instance.state.start('Game');
+  				 }else{
+  					console.log("La respuesta correcta es la " +  mostrarCorrecta(response.rc) );
+  				 }
+			},
+			error: function(response){
+					alert('response error');
+			}
+		});
+
+}
+
+function mostrarCorrecta(rc){
+
+	for ( i = 0; i < opciones.length ; i ++)
+		if( opciones[i].name == rc ){
+			return opciones[i].label; // aqui remplazar por cambiar imagen
+		}
+	
 }

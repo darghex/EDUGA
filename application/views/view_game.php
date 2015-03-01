@@ -22,6 +22,7 @@
 (function() {
 	// initialize the framework
 	var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game');
+	/*
 	var preguntas = new Array();
 	$.ajax({
 			url: "<?php echo base_url()?>/html/game/php/conexionManager.php",
@@ -42,8 +43,9 @@
 			score: preguntas,
 			bestScore: 100
 	};
+	*/
 
-	console.log("Se han cargado las preguntas : " + game.global.score);
+	//console.log("Se han cargado las preguntas : " + game.global.score);
 	// add game states
 	game.state.add('Boot', Tesoro.Boot);
 	game.state.add('Preloader', Tesoro.Preloader);
