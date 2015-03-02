@@ -5,8 +5,12 @@
         <li <?php if ($this->uri->segment(1)=='inicio')  { ?> class="open" <?php } ?> ><a href="inicio/root"><i class="fa fa-home"></i> Principal</a>
         </li>
         <?php foreach ($menus as $menus_key => $menus_value): ?>
+        <?php $menus_value->submenus ; ?>
          <?php $armenu=array(); ?>
-         <?php if ($menus_value->submenus): ?>
+         
+         <?php  if ($menus_value->submenus): ?>
+         
+
            <?php foreach ($menus_value->submenus as $submenus_key => $submenus_value): ?>
             <?php if (in_array($this->session->userdata('id_roles'), json_decode($submenus_value->id_roles))) : ?>
              <?php $armenu[]=$submenus_value->carpeta; ?>

@@ -1,3 +1,14 @@
+var instance = null;
+var tablero = { pregunta: null, respuesta: null};
+var opciones = Array();
+//Nivel
+var level = 1;
+var frame = 0;
+//Timer
+var total = 31;
+var timer;
+var maxTime = 31;
+var progresTime;
 Tesoro.Game = function(game){
 	// define needed variables for Candy.Game
 	this._candyGroup = null;
@@ -12,7 +23,20 @@ Tesoro.Game = function(game){
 
 
 Tesoro.Game.prototype = {
-	create: escenario,
+	create: function(){
+		escenario(this);
+		this.add.sprite(0, 0, 'backgroundGame');
+		this.add.sprite(0, 150, 'cuadroPregunta');
+		this.add.sprite(250, 0, 'scoreRed');
+		progressGemGreen = this.add.sprite(94, 30, 'progressGreen');
+		progresTime = this.add.sprite(700,495,'timeAmarillo');
+		gemGreen = this.add.sprite(20, 15, 'gemGreen');
+
+		//Timer
+		timer = this.time.create(false);
+    	timer.loop(1000, this.updateCounter, this);
+		timer.start();
+	},
 	managePause: function(){
 		// pause the game
 		this.game.paused = true;
@@ -25,22 +49,28 @@ Tesoro.Game.prototype = {
 			// unpause the game
 			this.game.paused = false;
 		}, this);
+	},
+	updateCounter: function () {
+    	total--;
+    	this.game.debug.text(total, 730, 570,'rgb(255,255,255)', '44px Arial');
+    	frame = getFrameTimer(total, 3) - 1;
+    	console.log(frame);
+    	progresTime.frame = frame;
+    	if (total == 0){
+    		total = maxTime;
+			instance.state.start('Game');    		
+    	}
+    	//console.log(total);
 	}
 };
 
 
 
-var instance = null;
-var tablero = { pregunta: null, respuesta: null};
-var opciones = Array();
-
-function escenario(){
-		instance = this;
-		
-		
+function escenario(_instance){
+		instance = _instance;
 
 		$.ajax({
-			url: "../html/game/php/conexionManager.php",
+			url: "/EDUGA/tesoro_saber/root/cargar_preguntas",
 			dataType: 'json',
 			contentType:"application/json",
 			success: function(response) {
@@ -52,7 +82,7 @@ function escenario(){
 							 fill: 'white', align: 'center', 
 							 wordWrap: true, 
 							 wordWrapWidth: 700 
-							});
+						});
 				
 				//carga de opciones de respuesta
 				opciones = Array(
@@ -86,24 +116,28 @@ function escenario(){
 			}
 		});
 
-		instance.add.sprite(0, 0, 'backgroundGame');
-		instance.add.sprite(0, 150, 'cuadroPregunta');
 		
 }
 
 
 function validarRespusta(item) {
   $.ajax({
-			url: "../html/game/php/verificar.php?preg="+tablero.pregunta+"&rpta="+item.name,
+			url: "/EDUGA/tesoro_saber/root/verificar?pregunta="+tablero.pregunta+"&respuesta="+item.name,
 			dataType: 'json',
 			contentType:"application/json",
 			success: function(response) {
 				 if( item.name == response.rc ){
 				 	// Aqui se carga el escenario de respuesta correcta e inicia una nueva pregunta
   					console.log("respuesta correcta"); 
-  					instance.state.start('Game');
+  					frame++;
+					progressGemGreen.frame = frame;
+					console.log("Frame " + frame);
+					instance.add.sprite(100,140,'FeedbackOk');			
+  					//instance.state.start('Game');
   				 }else{
-  					console.log("La respuesta correcta es la " +  mostrarCorrecta(response.rc) );
+  					var rcorrecta = "opcion" + mostrarCorrecta(response.rc)
+  					instance.add.sprite(15,140,'FeedbackError');
+  					instance.add.sprite(450,250,rcorrecta);			
   				 }
 			},
 			error: function(response){
@@ -119,5 +153,13 @@ function mostrarCorrecta(rc){
 		if( opciones[i].name == rc ){
 			return opciones[i].label; // aqui remplazar por cambiar imagen
 		}
-	
+}
+
+//calcula el frame a mostrar
+function getFrameTimer(currentTime, fraccion){	
+	if (currentTime > (fraccion-1) * 10){
+		return fraccion;
+	}else{
+		return getFrameTimer(currentTime, fraccion-1)
+	}
 }

@@ -8,7 +8,8 @@ Tesoro.Confirmacion.prototype = {
 		this.add.sprite(0, 0, 'backgroundGame');
 		this.add.sprite(310,60,'confirmacionStart');
 		this.add.sprite(0, 100, 'personajeIntro');
-		this.add.button(380, 280, 'start', this.startGame2, this, 1, 0, 2);
+		var btnAceptar = this.add.button(380, 280, 'start', this.startGame2, this, 1, 0, 2);
+		btnAceptar.input.useHandCursor = true;		
 		button = this.add.button(740, 180, 'btnMapa', this.startMapa, this, 1, 0, 2);
 		sprite = this.add.sprite(790, 180, 'mapa');
 	},

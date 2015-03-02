@@ -1,9 +1,11 @@
 var Tesoro = {};
 Tesoro.Boot = function(game){};
+
+var PATH = '/EDUGA/html/game/';
 Tesoro.Boot.prototype = {
 	preload: function(){
 		// preload the loading indicator first before anything else
-		this.load.image('preloaderBar', '../html/game/img/loading-bar.png');
+		this.load.image('preloaderBar', PATH + 'img/loading-bar.png');
 	},
 	create: function(){
 		// set scale options

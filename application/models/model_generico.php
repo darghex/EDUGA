@@ -168,6 +168,7 @@ public function menus_root_categorias () {
 	#$this->db->where( "modulos_app.carpeta",$carpeta );
 	#$this->db->join('modulos_app', 'modulos_app.id_modulos_app = permisos.id_modulos_app');
 	$query = $this->db->get("categorias_modulos_app");
+
 	return $query->result();
 
 }

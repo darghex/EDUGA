@@ -9,12 +9,12 @@
 	content="user-scalable=0, initial-scale=1, minimum-scale=1, maximum-scale=1, width=device-width, minimal-ui=1">
 <title>QuizGame</title>
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-<script src="<?php echo base_url()?>/html/game/js/phaser.min.js"></script>
-<script src="<?php echo base_url()?>/html/game/js/Boot.js"></script>
-<script src="<?php echo base_url()?>/html/game/js/Preloader.js"></script>
-<script src="<?php echo base_url()?>/html/game/js/MainMenu.js"></script>
-<script src="<?php echo base_url()?>/html/game/js/Confirmacion.js"></script>
-<script src="<?php echo base_url()?>/html/game/js/Game.js"></script>
+<script src="<?php echo base_url()?>html/game/js/phaser.min.js"></script>
+<script src="<?php echo base_url()?>html/game/js/Boot.js"></script>
+<script src="<?php echo base_url()?>html/game/js/Preloader.js"></script>
+<script src="<?php echo base_url()?>html/game/js/MainMenu.js"></script>
+<script src="<?php echo base_url()?>html/game/js/Confirmacion.js"></script>
+<script src="<?php echo base_url()?>html/game/js/Game.js"></script>
 
 </head>
 <body>
@@ -22,30 +22,6 @@
 (function() {
 	// initialize the framework
 	var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game');
-	/*
-	var preguntas = new Array();
-	$.ajax({
-			url: "<?php echo base_url()?>/html/game/php/conexionManager.php",
-			dataType: 'json',
-			contentType:"application/json",
-			success: function(response) {
-				this.preguntas = new Array();
-				$.each(response, function(i, item) {
-					preguntas.push(item);
-				});
-			},
-			error: function(response1){
-					alert('response error')
-			}
-	});
-
-	game.global = {
-			score: preguntas,
-			bestScore: 100
-	};
-	*/
-
-	//console.log("Se han cargado las preguntas : " + game.global.score);
 	// add game states
 	game.state.add('Boot', Tesoro.Boot);
 	game.state.add('Preloader', Tesoro.Preloader);

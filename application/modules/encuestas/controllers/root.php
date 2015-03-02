@@ -31,7 +31,7 @@ class Root extends CI_Controller {
 		$variables = $this->variables; $data['diccionario']=$this->variables['diccionario'];
 		$data['mispermisos']=$variables['mispermisos'];
 		
-		$data['titulo']=$variables['modulo'];
+		$data['titulo']='juego de preguntas';
 		$data['menus']=$this->model_generico->menus_root_categorias();
 		foreach ($data['menus'] as $key => $value) {
 			$data['menus'][$key]->submenus=$this->model_generico->menus_root($value->id_categorias_modulos_app,$this->session->userdata('id_roles'));
